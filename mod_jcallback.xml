@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="install">
+  <name>MOD_JCALLBACK_MODULE_NAME</name>
+  <author>Tkachenko Aleksey</author>
+  <creationDate>September 2015</creationDate>
+  <copyright>Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
+  <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+  <authorEmail>whiskeyman.tau@gmail.com</authorEmail>
+  <authorUrl>www.tauweb.ru</authorUrl>
+  <version>0.1 Alpha</version>
+  <description>MOD_JCALLBACK_XML_DESCRIPTION</description>
+  <files>
+    <folder>language/ru-RU</folder>
+    <folder>language/en-GB</folder>
+    <filename>mod_jcallback.xml</filename>
+    <filename module="mod_jcallback">mod_jcallback.php</filename>
+    <filename>helper.php</filename>
+    <filename>tmpl/default.php</filename>
+  </files>
+  <languages>
+    <language tag="en-GB">en-GB.mod_jcallback.ini</language>
+    <language tag="en-GB">en-GB.mod_jcallback.sys.ini</language>
+    <language tag="ru-RU">ru-RU.mod_jcallback.ini</language>
+    <language tag="ru-RU">ru-RU.mod_jcallback.sys.ini</language>
+  </languages>
+  <config>
+  <fields name="params">
+    <fieldset name="basic">
+      <field
+        name="showForm"
+        type="radio"
+        class="btn-group btn-group-yesno"
+        default="0"
+        label="MOD_JCALLBACK_FIELD_SHOWFORM_LABEL"
+        description="MOD_JCALLBACK_FIELD_SHOWFORM_DESC">
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+      </field>
+      <field
+        name="subject"
+        type="text"
+        default="Subject"
+        label="MOD_JCALLBACK_FIELD_SUBJECT_LABEL"
+        description="MOD_JCALLBACK_FIELD_SUBJECT_DESC">
+      </field>
+      <field
+        name="sender"
+        type="text"
+        default="your@domain.com"
+        label="MOD_JCALLBACK_FIELD_SENDER_LABEL"
+        description="MOD_JCALLBACK_FIELD_SENDER_DESC">
+      </field>
+      <field
+        name="recipient"
+        type="text"
+        default="your@domain.com"
+        label="MOD_JCALLBACK_FIELD_RECIPIENT_LABEL"
+        description="MOD_JCALLBACK_FIELD_RECIPIENT_DESC">
+      </field>
+    </fieldset>
+  </fields>
+  </config>
+</extension>
