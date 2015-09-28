@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.1.0" client="site" method="install">
+<extension type="module" version="3.1.0" client="site" method="upgrade">
   <name>MOD_JCALLBACK_MODULE_NAME</name>
   <author>Tkachenko Aleksey</author>
   <creationDate>September 2015</creationDate>
