@@ -16,6 +16,8 @@
     <filename module="mod_jcallback">mod_jcallback.php</filename>
     <filename>helper.php</filename>
     <filename>tmpl/default.php</filename>
+    <filename>tmpl/default_email_message.php</filename>
+    <filename>tmpl/default_modal.php</filename>
   </files>
   <languages>
     <language tag="en-GB">en-GB.mod_jcallback.ini</language>

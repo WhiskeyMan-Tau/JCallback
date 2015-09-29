@@ -22,14 +22,17 @@ require_once dirname(__FILE__) . '/helper.php';
 //   }
 // }
 
-// Show post send mail message
- if(JRequest::getVar('jcallback')){
-   echo JText::_('MOD_JCALLBACK_POSTSEND_MESSAGE_VALUE');
- }
 
-// // If module must show only button in the positions
+
+// If module must show only button in the positions
 if ($params->get('showForm')){
   // require JMOduleHelper::getLayoutPath('mod_jcallback', 'default_modal');
-}else{
+}elseif(!JRequest::getVar('jcallback')){
   require JModuleHelper::getLayoutPath('mod_jcallback');
+}elseif(JRequest::getVar('jcallback')){
+  ModJcallbackHelper::check($params);
+}
+// Show post send mail message
+if(JRequest::getVar('jcallback')){
+  echo JText::_('MOD_JCALLBACK_POSTSEND_MESSAGE_VALUE');
 }

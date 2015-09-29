@@ -19,8 +19,9 @@ class ModJcallbackHelper
      */
     public static function check($params)
     {
-      if(JRequest::getVar('name'))
+      if(JRequest::getVar('jcallback')){
         self::sendMail($params);
+      }
     }
 
     /**
@@ -42,12 +43,21 @@ class ModJcallbackHelper
       // Getting user form data-------------------------------------------------
       // Getting name from form
       $name = JRequest::getVar('name');
-      // Getting phone frome form
+      // Getting phone from form
       $phone =  JRequest::getVar('phone');
       // Getting e-mail from form
       $email = JRequest::getVar('email');
       // Getting message from form
-      $message = JRequest::getVar('message', 'Ленивые человеки не пишут сообщеньки.');
+      $message = JRequest::getVar('message');
+
+      // Set the massage body vars
+      $nameLabel = JText::_('MOD_JCALLBACK_FORM_NAME_LABEL_VALUE');
+      $phoneLabel = JText::_('MOD_JCALLBACK_FORM_PHONE_LABEL_VALUE');
+      $emailLabel = JText::_('MOD_JCALLBACK_FORM_EMAIL_LABEL_VALUE');
+      $messageLabel = JText::_('MOD_JCALLBACK_FORM_MESSAGE_LABEL_VALUE');
+      $emailLabel = $email ? "<b>$emailLabel:</b> $email" : "";
+      $messageLabel = $message ? "<b>$messageLabel:</b> $message" : "";
+
 
       // Get the JMail ogject
       $mailer = JFactory::getMailer();
@@ -57,14 +67,13 @@ class ModJcallbackHelper
       // $mailer->setSender($sender);
       $mailer->addRecipient($recipient);
 
-      // Set the message body
-      $email = $email ? "<b>User e-mail:</b> $email" : "";
-      $message = $message ? "<b>User message:</b> $message" : "";
-      $body   = '<h2 style="text-align: center;">'.$subject .' '. ($sitename).'</h2>'
-        . '<b>User:</b> '. $name . '</br>'
-        . '<b>User phone:</b> ' . $phone . '</br>'
-        . "$email </br>"
-        . "$message";
+//      $body   = '<h2 style="text-align: center;">'.$subject .' '. ($sitename).'</h2>'
+//        . '<b>User:</b> '. $name . '</br>'
+//        . '<b>User phone:</b> ' . $phone . '</br>'
+//        . "$email </br>"
+//        . "$message";
+      // Get the mail message body
+      require JModuleHelper::getLayoutPath('mod_jcallback','default_email_message');
 
       $mailer->isHTML(true);
       $mailer->Encoding = 'base64';
