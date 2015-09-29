@@ -19,6 +19,6 @@ defined('JPATH_PLATFORM') or die;?>
     <p class="jcallback-field-message">
       <label title="<?php echo JText::_('MOD_JCALLBACK_FORM_MESSAGE_LABEL_TITLE_VALUE');?>"><?php echo JText::_('MOD_JCALLBACK_FORM_MESSAGE_LABEL_VALUE');?></label>
       <textarea class="textarea" name="message" placeholder="<?php echo JText::_('MOD_JCALLBACK_FORM_MESSAGE_VALUE')?>" style="max-width: 100%;"></textarea>
-    <input type="submit" class="btn btn-danger" name="jcallback" style="width:100%; font-weight:b_old;" />
+    <input type="submit" class="btn btn-danger" name="jcallback" style="width:100%; font-weight:bold;" />
   </form>
 </div>
