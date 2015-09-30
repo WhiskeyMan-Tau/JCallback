@@ -59,7 +59,7 @@ class ModJcallbackHelper
 
       // Set JMail object params------------------------------------------------
       $mailer->setSubject($subject);
-      // $mailer->setSender($sender);
+      $mailer->setSender($sender);
       $mailer->addRecipient($recipient);
 
       // Get the mail message body
