@@ -10,4 +10,4 @@ JCallback - Simple Joomla callback module
 ![](https://github.com/WhiskeyMan-Tau/JCallback/blob/master/jcallback_admin.jpg?raw=true)
 
 #####Install
-You can install the module from the downloaded archive , or provide a link to it
+You can install the module from the downloaded archive , or provide a link to it https://github.com/WhiskeyMan-Tau/JCallback/archive/master.zip
