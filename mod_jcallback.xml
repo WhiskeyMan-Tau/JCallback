@@ -7,7 +7,7 @@
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
   <authorEmail>whiskeyman.tau@gmail.com</authorEmail>
   <authorUrl>www.tauweb.ru</authorUrl>
-  <version>0.1 Alpha</version>
+  <version>0.2</version>
   <description>MOD_JCALLBACK_XML_DESCRIPTION</description>
   <files>
     <folder>language/ru-RU</folder>
