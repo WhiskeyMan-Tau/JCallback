@@ -53,6 +53,16 @@
         description="MOD_JCALLBACK_FIELD_SENDER_DESC">
       </field>
       <field
+        name="useSiteMailfrom"
+        type="radio"
+        class="btn-group btn-group-yesno"
+        default="0"
+        label="MOD_JCALLBACK_FIELD_USESITEMAILFROM_LABEL"
+        description="MOD_JCALLBACK_FIELD_USESITEMAILFROM_DESC">
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+      </field>
+      <field
         name="recipient"
         type="text"
         default="your@domain.com"

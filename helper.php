@@ -59,7 +59,9 @@ class ModJcallbackHelper
 
       // Set JMail object params------------------------------------------------
       $mailer->setSubject($subject);
-      $mailer->setSender($sender);
+      $params->get('useSiteMailfrom') ?
+              $mailer->setSender(JFactory::getConfig()->get( 'mailfrom' )) :
+              $mailer->setSender($sender);
       $mailer->addRecipient($recipient);
 
       // Get the mail message body
