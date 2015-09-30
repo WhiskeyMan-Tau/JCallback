@@ -33,31 +33,26 @@ class ModJcallbackHelper
      */
     public static function sendMail($params)
     {
-      $sender = $params->get('sender');
-      $recipient = $params->get('recipient');
-      $subject = $params->get('subject');
+      $sender     = $params->get('sender');
+      $recipient  = $params->get('recipient');
+      $subject    = $params->get('subject');
 
       // Getting the site name
       $sitename = JFactory::getApplication()->get('sitename');
 
       // Getting user form data-------------------------------------------------
-      // Getting name from form
-      $name = JRequest::getVar('name');
-      // Getting phone from form
-      $phone =  JRequest::getVar('phone');
-      // Getting e-mail from form
-      $email = JRequest::getVar('email');
-      // Getting message from form
-      $message = JRequest::getVar('message');
+      $name     = JFilterInput::getInstance()->clean(JRequest::getVar('name'));
+      $phone    = JFilterInput::getInstance()->clean(JRequest::getVar('phone'));
+      $email    = JFilterInput::getInstance()->clean(JRequest::getVar('email'));
+      $message  = JFilterInput::getInstance()->clean(JRequest::getVar('message'));
 
       // Set the massage body vars
-      $nameLabel = JText::_('MOD_JCALLBACK_FORM_NAME_LABEL_VALUE');
-      $phoneLabel = JText::_('MOD_JCALLBACK_FORM_PHONE_LABEL_VALUE');
-      $emailLabel = JText::_('MOD_JCALLBACK_FORM_EMAIL_LABEL_VALUE');
+      $nameLabel    = JText::_('MOD_JCALLBACK_FORM_NAME_LABEL_VALUE');
+      $phoneLabel   = JText::_('MOD_JCALLBACK_FORM_PHONE_LABEL_VALUE');
+      $emailLabel   = JText::_('MOD_JCALLBACK_FORM_EMAIL_LABEL_VALUE');
       $messageLabel = JText::_('MOD_JCALLBACK_FORM_MESSAGE_LABEL_VALUE');
-      $emailLabel = $email ? "<b>$emailLabel:</b> $email" : "";
+      $emailLabel   = $email ? "<b>$emailLabel:</b> $email" : "";
       $messageLabel = $message ? "<b>$messageLabel:</b> $message" : "";
-
 
       // Get the JMail ogject
       $mailer = JFactory::getMailer();
@@ -67,11 +62,6 @@ class ModJcallbackHelper
       // $mailer->setSender($sender);
       $mailer->addRecipient($recipient);
 
-//      $body   = '<h2 style="text-align: center;">'.$subject .' '. ($sitename).'</h2>'
-//        . '<b>User:</b> '. $name . '</br>'
-//        . '<b>User phone:</b> ' . $phone . '</br>'
-//        . "$email </br>"
-//        . "$message";
       // Get the mail message body
       require JModuleHelper::getLayoutPath('mod_jcallback','default_email_message');
 

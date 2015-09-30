@@ -22,8 +22,6 @@ require_once dirname(__FILE__) . '/helper.php';
 //   }
 // }
 
-
-
 // If module must show only button in the positions
 if ($params->get('showForm')){
   // require JMOduleHelper::getLayoutPath('mod_jcallback', 'default_modal');
